@@ -1116,3 +1116,8 @@ header .brand-name-subtext {
 body.vintage header .brand-name {
   font-weight: 600;
 }
+
+#mailingListForm button[type='submit'] {
+  margin-top: 50px;
+  font-size: 25px;
+}
