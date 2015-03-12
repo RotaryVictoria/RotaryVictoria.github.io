@@ -1090,6 +1090,17 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-prev,
 body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
   line-height: 55px;
 }
+
+
+@media (min-width: 768px) {
+    header .brand-name-subtext {
+    font-size: 60px;
+  }
+}
+header .brand-name-subtext {
+  font-size: 40px;
+}
+
 .hero-img {
   max-width: 200px;
   max-height: 200px;
