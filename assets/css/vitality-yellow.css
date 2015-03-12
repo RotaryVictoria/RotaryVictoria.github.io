@@ -1110,6 +1110,6 @@ header .brand-name-subtext {
   margin: 20% 10% 10% 10%;
 }
 
-.brand-name {
+body.vintage header .brand-name {
   font-weight: 600;
 }
