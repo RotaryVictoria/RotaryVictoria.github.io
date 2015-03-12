@@ -215,7 +215,7 @@ header .intro-content {
 }
 header .brand-name {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 55px;
+  font-size: 35px;
   line-height: 55px;
   text-transform: uppercase;
   font-weight: 900;
@@ -275,7 +275,7 @@ header .scroll-down .btn:hover {
     transform: translate(-50%, -50%);
   }
   header .brand-name {
-    font-size: 80px;
+    font-size: 50px;
     line-height: 80px;
   }
   header .brand-name-subtext {
