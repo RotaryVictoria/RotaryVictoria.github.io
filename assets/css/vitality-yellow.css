@@ -1093,12 +1093,14 @@ body.vintage .testimonials .testimonials-carousel .owl-controls .owl-next {
 
 header .brand-name-subtext {
   font-size: 40px;
+  white-space: nowrap;
 }
 
 
 @media (min-width: 768px) {
     header .brand-name-subtext {
     font-size: 60px;
+    white-space: nowrap;
   }
 }
 
