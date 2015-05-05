@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Adam Coard, github.com/acoard">
+
+    <title>Rotary Club of Downtown Victoria</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Retina.js - Load first for faster HQ mobile images. -->
+    <!-- <script src="assets/js/plugins/retina/retina.min.js"></script> -->
+
+    <!-- Font Awesome -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Default Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'> -->
+
+    <!-- Modern Style Fonts (Include these is you are using body.modern!) -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'> -->
+
+    <!-- Vintage Style Fonts (Include these if you are using body.vintage!) -->
+    <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="assets/css/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/jquery.fs.wallpaper.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/animate.css" rel="stylesheet" type="text/css">
+
+    <!-- Vitality Theme CSS -->
+    <!-- Uncomment the color scheme you want to use. -->
+    <!-- <link href="assets/css/vitality-red.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-aqua.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-blue.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-green.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-orange.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-pink.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-purple.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-tan.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="assets/css/vitality-turquoise.css" rel="stylesheet" type="text/css"> -->
+    <link href="assets/css/vitality-yellow.css" rel="stylesheet" type="text/css">
+    
+
+
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- Alternate Body Classes: .modern and .vintage -->
+
+<body class='vintage' id="page-top">
+
+    <!-- Navigation -->
+    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <div>RCDV</div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About Our Club</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#Why Join Rotary?">Why Join Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#what is Rotary?">What Is Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Join Now</a>
+                    </li>
+                    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="about" role="menu">
+            <li><a href="#applyonline">Apply Online</a></li>
+            <li><a href="#fees">Membership Fees</a></li>
+          </ul>
+        </li>
+                    <li>
+                   <!--  <li>
+                        <a class="page-scroll" href="#pricing">Membership Fees</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#process">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Meet The Executive Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#work">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- <header style="background-image: url('assets/img/bg-header.jpg');"> -->
+    <header style="background-image: url('assets/img/Downtown_Victoria.jpg');">
+
+        <div class="intro-content">
+            <img src="assets/img/RotaryMoE_Black.png" class="img-responsive img-centered hero-img" alt="">
+            <div class="brand-name">Rotary Club</div>
+            <hr class="colored">
+            <div class="brand-name-subtext">of Downtown Victoria</div>
+        </div>
+        <div class="scroll-down">
+            <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
+        </div>
+    </header>
+    <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Membership Application Form</legend>
+
+<!-- Text input-->
+<h3>Contact Information</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Name">Name (required)</label>  
+  <div class="col-md-4">
+  <input id="Name" name="Name" type="text" placeholder="Mickey Mouse" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Address (required)</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea">Disneyland
+California
+USA</textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Phone">Contact Phone Number (required)</label>  
+  <div class="col-md-4">
+  <input id="Phone" name="Phone" type="text" placeholder="250-999-4545" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Email">Email (required)</label>  
+  <div class="col-md-4">
+  <input id="Email" name="Email" type="text" placeholder="mickey_mouse1950@gmail.com" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<h3>Personal Information</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="job">Occupation (required)</label>  
+  <div class="col-md-4">
+  <input id="job" name="job" type="text" placeholder="Entertainer" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Employer">Employer (If Applicable)</label>  
+  <div class="col-md-4">
+  <input id="Employer" name="Employer" type="text" placeholder="Disney" class="form-control input-md">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Birth Date">Birthday (required)</label>  
+  <div class="col-md-4">
+  <input id="Birth Date" name="Birth Date" type="text" placeholder="DD-MM-YYYY" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="BirthPlace">Birth Place (required)</label>  
+  <div class="col-md-4">
+  <input id="BirthPlace" name="BirthPlace" type="text" placeholder="Disneyland" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<h3>Rotary Involvment</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Rotarybefore">Have you been involved with Rotary before?</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Rotarybefore-0">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-0" value="1">
+      Rotary Club
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Rotarybefore-1">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-1" value="2">
+      Rotaract Club
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Rotarybefore-2">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-2" value="3">
+      Interact Club
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Rotarybefore-3">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-3" value="4">
+      Youth Exchange
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Rotarynames">Please let us know the name of the previous club and when you were a member</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="Rotarynames" name="Rotarynames">default text</textarea>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<h3>Membership Details</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Will you be paying monthly or yearly? (required)</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+      Monthly
+    </label>
+    </div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      Yearly
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Payment">How do you want to pay? (required)</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="Payment-0">
+      <input type="radio" name="Payment" id="Payment-0" value="1" checked="checked">
+      PayPal
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-1">
+      <input type="radio" name="Payment" id="Payment-1" value="2">
+      Cheque
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-2">
+      <input type="radio" name="Payment" id="Payment-2" value="3">
+      Cash
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-3">
+      <input type="radio" name="Payment" id="Payment-3" value="4">
+      E-Transfer
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-4">
+      <input type="radio" name="Payment" id="Payment-4" value="5">
+      Credit Card
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Rotarian">Did you want to add a subscription to the Rotarian ($12) to your initiation fee?</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="Rotarian-0">
+      <input type="radio" name="Rotarian" id="Rotarian-0" value="1" checked="checked">
+      Yes
+    </label> 
+    <label class="radio-inline" for="Rotarian-1">
+      <input type="radio" name="Rotarian" id="Rotarian-1" value="2">
+      No
+    </label>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">What are your personal interests/skills that you will bring to the club?</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="hobbies">What are your hobbies?</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="hobbies" name="hobbies">default text</textarea>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Committies">Which committees would you be interested in joining? (required)</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Committies-0">
+      <input type="checkbox" name="Committies" id="Committies-0" value="1">
+      International
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Committies-1">
+      <input type="checkbox" name="Committies" id="Committies-1" value="2">
+      Local
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Committies-2">
+      <input type="checkbox" name="Committies" id="Committies-2" value="3">
+      PR
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Committies-3">
+      <input type="checkbox" name="Committies" id="Committies-3" value="4">
+      Professional Development
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Committies-4">
+      <input type="checkbox" name="Committies" id="Committies-4" value="5">
+      Membership
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="info">How did you hear about the club? (required)</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="info-0">
+      <input type="checkbox" name="info" id="info-0" value="1">
+      Facebook
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-1">
+      <input type="checkbox" name="info" id="info-1" value="2">
+      Website
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-2">
+      <input type="checkbox" name="info" id="info-2" value="3">
+      Word of Mouth
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-3">
+      <input type="checkbox" name="info" id="info-3" value="4">
+      Twitter
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-4">
+      <input type="checkbox" name="info" id="info-4" value="5">
+      Instagram
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-5">
+      <input type="checkbox" name="info" id="info-5" value="6">
+      Another Rotary Club
+    </label>
+    </div>
+  </div>
+</div>
+<!-- Multiple Checkboxes -->
+<h3>Rotary Member Commitments</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="commitments">Please read the following commitments. Check the box to show you have read and understood them</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="commitments-0">
+      <input type="checkbox" name="commitments" id="commitments-0" value="1">
+      I understand that I am expected to attend a minimum of two events (meetings, social events, volunteer opportunities, fundraisers, networking events etc) per month. If I am unable to do so due to work commitments or travel, I will inform other club members of my external obligations. Key to Rotary is being active in Rotary. We hold weekly meetings along with multiple social, volunteering and networking events each month, so it should easy to fulfil this minimum requirement.
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="commitments-1">
+      <input type="checkbox" name="commitments" id="commitments-1" value="2">
+      I accept the monetary commitments described in the Membership Fees section of the website. I understand that they are part of my Rotary obligation and that failure to meet such obligations, without actively communicating with the Board, will result in automatic removal from Rotary membership after 60 days of non-payment.
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="commitments-2">
+      <input type="checkbox" name="commitments" id="commitments-2" value="3">
+      I accept the responsibility of upholding only the highest ethical standards. I will support my community by exemplifying the notion of Service Above Self and will act professionally to protect Rotary’s brand and reputation.
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="feedback">Any questions or feedback?</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="feedback" name="feedback">default text</textarea>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sig">Signature - Please print your full name (required)</label>  
+  <div class="col-md-4">
+  <input id="sig" name="sig" type="text" placeholder="Mickey Mouse" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sigdate">Date (required)</label>  
+  <div class="col-md-4">
+  <input id="sigdate" name="sigdate" type="text" placeholder="DD-MM-YYY" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">That's it! Who knew being a Rotarian was so easy</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Submit your application</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+    <footer class="footer" style="background-image: url('assets/img/bg-footer.jpg')">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-map-marker"></i> Attend a Meeting</h4>
+                    <p>Every Wednesday at 6pm LOCATION FILLIN</p>
+                </div>
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-envelope"></i> Email</h4>
+                    <p><a href="mailto:rotarydowntownvictoria@gmail.com">rotarydowntownvictoria@gmail.com</a>
+                    </p>
+                </div>
+                 <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-facebook"></i> Facebook</h4>
+                    <p><a href="#https:www.facebook.com/rotarydowntownvictoria">rotarydowntownvictoria</a>
+                    </p>
+                </div>
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-twitter"></i> Twitter</h4>
+                    <p><a href="#https://twitter.com/rotary_downtown">@rotary_downtown</a>
+                </div>
+                <div class="col-md-4 contact-details">
+                    <h4><i class="fa fa-twitter"></i> Instagram</h4>
+                    <p><a href="#https://instagram.com/ROTARYDOWNTOWNVICTORIA">ROTARYDOWNTOWNVICTORIA</a>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-lg-12">
+                    <p class="small">&copy; Rotary Club of Downtown Victoria</p>
+                    <p class='small'>Site created by <a href="http://acoard.github.io">Adam Coard</a>  </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+
+    <!-- Example Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/portfolio/bg-1.jpg')">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <img src="assets/img/client-logos/logo-1.png" class="img-responsive img-centered" alt="">
+                            <h2>Project Title</h2>
+                            <hr class="colored">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <img src="assets/img/portfolio/mobile-screens.png" class="img-responsive img-centered" alt="">
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <ul class="list-inline item-details">
+                                <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
+                                </li>
+                                <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                </li>
+                                <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/portfolio/bg-2.jpg')">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <img src="assets/img/client-logos/logo-2.png" class="img-responsive img-centered" alt="">
+                            <h2>Project Title</h2>
+                            <hr class="colored">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <img src="assets/img/portfolio/tablet-screens.png" class="img-responsive img-centered" alt="">
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <ul class="list-inline item-details">
+                                <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
+                                </li>
+                                <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                </li>
+                                <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/portfolio/bg-3.jpg')">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <img src="assets/img/client-logos/logo-1.png" class="img-responsive img-centered" alt="">
+                            <h2>Project Title</h2>
+                            <hr class="colored">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <img src="assets/img/portfolio/mobile-screens.png" class="img-responsive img-centered" alt="">
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <ul class="list-inline item-details">
+                                <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
+                                </li>
+                                <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                </li>
+                                <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true" style="background-image: url('assets/img/portfolio/bg-4.jpg')">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <img src="assets/img/client-logos/logo-2.png" class="img-responsive img-centered" alt="">
+                            <h2>Project Title</h2>
+                            <hr class="colored">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi in tenetur vero voluptatum sapiente dolores eligendi nemo iste ea. Omnis, odio enim sint quam dolorum dolorem. Nostrum, minus, ad.</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <img src="assets/img/portfolio/tablet-screens.png" class="img-responsive img-centered" alt="">
+                        </div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <ul class="list-inline item-details">
+                                <li>Client: <strong><a href="http://startbootstrap.com">Start Bootstrap</a></strong>
+                                </li>
+                                <li>Date: <strong><a href="http://startbootstrap.com">April 2014</a></strong>
+                                </li>
+                                <li>Service: <strong><a href="http://startbootstrap.com">Web Development</a></strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script src="assets/js/plugins/jquery.easing.min.js"></script>
+    <script src="assets/js/plugins/classie.js"></script>
+    <script src="assets/js/plugins/cbpAnimatedHeader.js"></script>
+    <script src="assets/js/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.fs.wallpaper.js"></script>
+    <script src="assets/js/plugins/jquery.mixitup.js"></script>
+    <script src="assets/js/plugins/wow/wow.min.js"></script>
+    <script src="assets/js/contact_me.js"></script>
+    <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
+
+    <!-- Vitality Theme Scripts -->
+    <script src="assets/js/vitality.js"></script>
+
+    <!-- TypeKit -->
+    <script src="//use.typekit.net/kgs8msm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+</body>
+
+</html>
