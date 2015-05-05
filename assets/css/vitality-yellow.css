@@ -1121,3 +1121,7 @@ body.vintage header .brand-name {
   margin-top: 50px;
   font-size: 25px;
 }
+
+.quote {
+  background-color: rgba(0, 0, 0, 0.33);
+}
