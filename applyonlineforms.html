@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Adam Coard, github.com/acoard">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 
     <title>Rotary Club of Downtown Victoria</title>
 
@@ -69,7 +70,7 @@
 
     <!-- Navigation -->
     <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -79,7 +80,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="index.html">
                     <div>RCDV</div>
                 </a>
             </div>
@@ -91,36 +92,7 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About Our Club</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#WhyJoinRotary?">Why Join Rotary?</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#what is Rotary?">What Is Rotary?</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Join Now</a>
-                    </li>
-                    <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="about" role="menu">
-            <li><a href="#applyonline">Apply Online</a></li>
-            <li><a href="#fees">Membership Fees</a></li>
-          </ul>
-        </li>
-                    <li>
-                   <!--  <li>
-                        <a class="page-scroll" href="#pricing">Membership Fees</a>
-                    </li> -->
-                    <li>
-                        <a class="page-scroll" href="#process">Events</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Meet The Executive Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#work">Contact Us</a>
+                      <a href="index.html">Home</a>
                     </li>
                 </ul>
             </div>
@@ -138,11 +110,10 @@
             <hr class="colored">
             <div class="brand-name-subtext">of Downtown Victoria</div>
         </div>
-        <div class="scroll-down">
-            <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
-        </div>
     </header>
-    <form class="form-horizontal">
+
+
+<form id='membershipForm' class="form-horizontal" action="http://formspree.io/RotaryDowntownVictoria@gmail.com" method="POST">
 <fieldset>
 
 <!-- Form Name -->
@@ -257,14 +228,14 @@ USA</textarea>
 <div class="form-group">
   <label class="col-md-4 control-label" for="Rotarynames">Please let us know the name of the previous club and when you were a member</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="Rotarynames" name="Rotarynames">default text</textarea>
+    <textarea class="form-control" id="Rotarynames" name="Rotarynames"></textarea>
   </div>
 </div>
 
 <!-- Multiple Radios -->
 <h3>Membership Details</h3>
 <div class="form-group">
-  <label class="col-md-4 control-label" for="radios">Will you be paying monthly or yearly? (required)</label>
+  <label class="col-md-4 control-label" for="radios">Once we charter, will you be paying monthly or yearly? (required)</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="radios-0">
@@ -283,7 +254,7 @@ USA</textarea>
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Payment">How do you want to pay? (required)</label>
+  <label class="col-md-4 control-label" for="Payment">Once we charter, how would you want to pay? (required)</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="Payment-0">
@@ -319,7 +290,7 @@ USA</textarea>
 </div>
 
 <!-- Multiple Radios (inline) -->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label" for="Rotarian">Did you want to add a subscription to the Rotarian ($12) to your initiation fee?</label>
   <div class="col-md-4"> 
     <label class="radio-inline" for="Rotarian-0">
@@ -331,13 +302,13 @@ USA</textarea>
       No
     </label>
   </div>
-</div>
+</div> -->
 
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">What are your personal interests/skills that you will bring to the club?</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+    <textarea class="form-control" id="textarea" name="textarea"></textarea>
   </div>
 </div>
 
@@ -345,12 +316,12 @@ USA</textarea>
 <div class="form-group">
   <label class="col-md-4 control-label" for="hobbies">What are your hobbies?</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="hobbies" name="hobbies">default text</textarea>
+    <textarea class="form-control" id="hobbies" name="hobbies"></textarea>
   </div>
 </div>
 
 <!-- Multiple Checkboxes -->
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label" for="Committies">Which committees would you be interested in joining? (required)</label>
   <div class="col-md-4">
   <div class="checkbox">
@@ -384,7 +355,7 @@ USA</textarea>
     </label>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
@@ -439,12 +410,12 @@ USA</textarea>
       I understand that I am expected to attend a minimum of two events (meetings, social events, volunteer opportunities, fundraisers, networking events etc) per month. If I am unable to do so due to work commitments or travel, I will inform other club members of my external obligations. Key to Rotary is being active in Rotary. We hold weekly meetings along with multiple social, volunteering and networking events each month, so it should easy to fulfil this minimum requirement.
     </label>
     </div>
-  <div class="checkbox">
+  <!-- <div class="checkbox">
     <label for="commitments-1">
       <input type="checkbox" name="commitments" id="commitments-1" value="2">
-      I accept the monetary commitments described in the Membership Fees section of the website. I understand that they are part of my Rotary obligation and that failure to meet such obligations, without actively communicating with the Board, will result in automatic removal from Rotary membership after 60 days of non-payment.
+      I accept the monetary commitments once the club charters described in the Membership Fees section of the website. I understand that they are part of my Rotary obligation and that failure to meet such obligations, without actively communicating with the Board, will result in automatic removal from Rotary membership after 60 days of non-payment.
     </label>
-    </div>
+    </div> -->
   <div class="checkbox">
     <label for="commitments-2">
       <input type="checkbox" name="commitments" id="commitments-2" value="3">
@@ -458,7 +429,7 @@ USA</textarea>
 <div class="form-group">
   <label class="col-md-4 control-label" for="feedback">Any questions or feedback?</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="feedback" name="feedback">default text</textarea>
+    <textarea class="form-control" id="feedback" name="feedback"></textarea>
   </div>
 </div>
 <!-- Text input-->
@@ -491,10 +462,10 @@ USA</textarea>
     <footer class="footer" style="background-image: url('assets/img/bg-footer.jpg')">
         <div class="container text-center">
             <div class="row">
-                <div class="col-md-4 contact-details">
+                <!-- <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-map-marker"></i> Attend a Meeting</h4>
                     <p>Every Wednesday at 6pm LOCATION FILLIN</p>
-                </div>
+                </div> -->
                 <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-envelope"></i> Email</h4>
                     <p><a href="mailto:rotarydowntownvictoria@gmail.com">rotarydowntownvictoria@gmail.com</a>
@@ -517,7 +488,7 @@ USA</textarea>
             <div class="row copyright">
                 <div class="col-lg-12">
                     <p class="small">&copy; Rotary Club of Downtown Victoria</p>
-                    <p class='small'>Site created by <a href="http://acoard.github.io">Adam Coard</a>  </p>
+                    <p class='small'>Site created by <a href="">Katie Coard</a>  </p>
                 </div>
             </div>
         </div>
@@ -690,7 +661,6 @@ USA</textarea>
     <script src="assets/js/plugins/jquery.fs.wallpaper.js"></script>
     <script src="assets/js/plugins/jquery.mixitup.js"></script>
     <script src="assets/js/plugins/wow/wow.min.js"></script>
-    <script src="assets/js/contact_me.js"></script>
     <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
 
     <!-- Vitality Theme Scripts -->
