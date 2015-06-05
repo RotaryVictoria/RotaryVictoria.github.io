@@ -923,6 +923,8 @@ footer.footer {
   background-size: cover;
   -o-background-size: cover;
   padding: 50px 0 20px;
+  min-height: 500px;
+  position: relative;
 }
 footer.footer a {
   color: rgba(255, 255, 255, 0.7);
@@ -1124,4 +1126,19 @@ body.vintage header .brand-name {
 
 .quote {
   background-color: rgba(0, 0, 0, 0.33);
+}
+
+.social-text{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    list-style: none;
+    text-align: left;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  text-align: right;
 }
