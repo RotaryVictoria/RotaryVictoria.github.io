@@ -1142,3 +1142,7 @@ body.vintage header .brand-name {
   right: 1%;
   text-align: right;
 }
+
+h3.media-heading {
+  font-size: 2rem;
+}
