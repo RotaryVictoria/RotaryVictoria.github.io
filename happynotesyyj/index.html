@@ -1,0 +1,450 @@
+<!-- 
+
+Made, in a rush, by Adam Coard.
+
+Some people build complex single-page apps.  Instead, I build all my apps in 
+one file.I'll split it apart into a re-usable js library sometime, but that 
+day is not today.
+
+GitHub: https://github.com/acoard
+Twitter: @AdamCoard
+
+If you want to use this on your site feel free.  Everything herein I have the
+right to license is licensed under MIT.  All I ask is that you let me know.
+
+Thanks to Mary Lou (codrops) and Chris Coyer (css-tricks) for some of the CSS.
+
+ -->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Instagrid</title>
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<style>
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		font-size: 16px;
+		font-family: "Raleway", sans-serif;
+		/*background: repeating-linear-gradient( 45deg, #606DBC, #606dbc 10px, #969A7D 10px, #969A7D 15px )*/
+		background: repeating-linear-gradient( 45deg, rgba(96, 109, 188, 0.45), rgba(96, 109, 188, 0.45) 10px, rgba(150, 154, 125, 0.45) 10px, rgba(150, 154, 125, 0.45) 15px );
+	}
+
+	p {
+		line-height: 1.4;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+
+
+	@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+	@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+	@-webkit-keyframes animFlipFront {
+	    0% { -webkit-transform: perspective(1000px) rotate3d(1,0,0,-90deg); }
+	    100% { -webkit-transform: perspective(1000px); }
+	}
+
+	@keyframes animFlipFront {
+	    0% { -webkit-transform: perspective(1000px) rotate3d(1,0,0,-90deg); transform: perspective(1000px) rotate3d(1,0,0,-90deg); }
+	    100% { -webkit-transform: perspective(1000px); transform: perspective(1000px); }
+	}
+
+	@-webkit-keyframes animFlipBack {
+	    0% { -webkit-transform: perspective(1000px) rotate3d(1,0,0,90deg); }
+	    100% { -webkit-transform: perspective(1000px); }
+	}
+
+	@keyframes animFlipBack {
+	    0% { -webkit-transform: perspective(1000px) rotate3d(1,0,0,90deg); transform: perspective(1000px) rotate3d(1,0,0,90deg); }
+	    100% { -webkit-transform: perspective(1000px); transform: perspective(1000px); }
+	}
+
+	.responsive-square {
+		float:left;
+		position: relative;
+		/*width: 33.333%;*/
+		width: 100%;
+		overflow:hidden;
+		perspective: 90em;
+	}
+
+	.responsive-square img {
+		width: 100%;
+		position: relative;
+	}
+
+	.responsive-square::after {
+		content: "";
+		opacity: 0;
+		transition: 0.3s;
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		/*background-color: rgba(0, 36, 108, 0.69);*/
+		background: rgba(0, 36, 108, 0.3);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+
+	.responsive-square:hover::after {
+		opacity: 1;
+	}
+
+	.caption {
+		position: absolute;
+		bottom: 10%;
+		z-index: 3;
+		left: 0;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+		background-color: white;
+		padding: 1em;
+		height: 40%;
+		margin-bottom: 10%;
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity 0.1s ease, transform 0.55s;
+		transform: rotateX(-100deg);
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+	}
+
+
+	.caption p {
+		color: black;
+		margin: 0;
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.05);
+		max-height: 100%;
+
+	}
+
+	.responsive-square:hover .caption {
+		opacity: 1;
+
+		transform: rotateX(0deg);
+
+	}
+
+	.loading {
+		position: fixed;
+		top: 0;
+		z-index: 5;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+
+		background: repeating-linear-gradient( 45deg, #606DBC, #606dbc 10px, #969A7D 10px, #969A7D 15px )
+	}
+
+	.notification {
+		position: fixed;
+		z-index: 6;
+		left: 30px;
+		max-width: 300px;
+		padding: 1.5em;
+		-webkit-transform-origin: 50% 100%;
+		transform-origin: 50% 100%;
+		bottom: 0px;
+		backface-visibility: hidden;
+		background-color: #23232C;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		color: whitesmoke;
+	}
+
+	.notification button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		border-radius: 0;
+		padding: 1em;
+		color: black;
+		background-color: rgb(199, 199, 215);
+		margin: 0;
+		border: 0;
+		outline: none;
+	}
+
+	/*button:focus {
+		outline: none;
+	}*/
+
+	.notification.show {
+		animation-duration: 0.3s;
+		animation-name: animFlipFront;
+	}
+
+	.notification.hide {
+		-webkit-animation-name: animFlipBack;
+		animation-name: animFlipBack;
+		-webkit-animation-direction: reverse;
+		    animation-direction: reverse;
+	}
+
+	@media (min-width: 500px) {
+		.responsive-square {
+			width: 50%;
+		}
+	}
+
+	@media (min-width: 800px) {
+		.responsive-square {
+			width: 33.333%;
+		}
+	}
+
+
+	
+
+			
+	</style>
+
+<!-- <h1>Welcome to the Instagrid</h1>
+<form>
+	<input type="text" placeholder="Don't be afraid">
+	<button type='submit'>Click me gently</button>
+		
+</form> -->
+<div class="instagrid"></div>
+
+<script>
+
+
+var Instagrid = (function(userOptions){
+	var InstaGrid = function(userOptions){
+		//todo - let user define these via passing in options;
+		// var hashtag = typeof options === 'string' ? options.hashtag : 'neko';
+		
+		
+		var clientID = 'de54d862ffb54da0be68cedb4306aee7';	
+		var baseURL = 'https://api.instagram.com/v1/tags/~HASHTAG~/media/recent'
+		var finishedURL = baseURL + '?client_id=' + clientID;
+		
+		this.options = {
+			target : '.target'
+		};
+
+		extend(this.options, userOptions);
+		
+		this.containerElement = document.querySelectorAll(this.options.target)[0];
+		this.addLoadingSpinner(this.containerElement);
+		//since jsonp requires a callback in the global scope,
+		//we have to populate the global namespace.
+		//note - in order to be not have name conflict with multiple instances we'd need to
+		var globalCallbackName = 'globalCallback';
+		this.jsonpURL = finishedURL += '&callback='+globalCallbackName;
+		
+		this.addJSONPCallback(globalCallbackName, function(data){
+			var images = data.data;
+			this.drawImages(images, this.containerElement);
+			window.onload = this.removeLoadingSpinner.bind(this);
+			// images.forEach(this.addImageToDOM.bind(this));
+			
+		}.bind(this));
+	};
+
+	InstaGrid.prototype.addJSONPCallback = function(functionName, callback) {
+		var that = this;
+		window[functionName] = callback.bind(that);
+	};
+
+	InstaGrid.prototype.drawImages = function(images, targetDiv, callback) {
+		var allImageDivs = document.createElement('div');
+		allImageDivs.className = 'image-container';
+
+		images.forEach(function(e, i){
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			
+			div.className = 'responsive-square'
+			img.src = e.link + 'media';	
+			
+			div.appendChild(img);
+			
+			if (e.caption !== null){
+				var caption = document.createElement('div');
+				var p = document.createElement('p');
+				var link = document.createElement('a');
+				
+				link.href = e.link;
+				p.textContent = e.caption.text;
+				caption.className = 'caption';
+
+				link.appendChild(p);
+				caption.appendChild(link);
+				div.appendChild(caption);
+			}
+
+			allImageDivs.appendChild(div);
+		});
+		
+		targetDiv.appendChild(allImageDivs);
+
+		if (typeof callback === "function") callback();
+	};
+
+	// InstaGrid.prototype.createCallbackURL = function(hashtag) {
+		
+	// };
+
+	InstaGrid.prototype.makeJSONPRequest = function(url) {
+		var script = document.createElement('script');
+		script.src = url;
+		document.getElementsByTagName('head')[0].appendChild(script);
+	};
+
+	InstaGrid.prototype.populateInstaGrid = function(hashtag) {
+		var url = this.jsonpURL.replace("~HASHTAG~", hashtag);
+		this.makeJSONPRequest(url);
+	};
+
+	InstaGrid.prototype.addImageToDOM = function(image) {
+		var div = document.createElement('div');
+		var img = document.createElement('img');
+		img.src = image.link + 'media';
+		div.appendChild(img);
+		div.className = 'responsive-square'
+
+		this.containerElement.appendChild(div);
+		console.info("ey your code ain't so shitty no more");
+	};
+
+	InstaGrid.prototype.clearInstaGrid = function() {
+		// this.containerElement.innerHTML = '';
+		var target = document.querySelectorAll(this.options.target + " .image-container")[0]
+		if (typeof target !== 'undefined') target.innerHTML = '';
+	};
+
+	InstaGrid.prototype.changeHashTag = function(newHashtag) {
+		this.currentHashTag = newHashtag;
+		this.clearInstaGrid();
+		this.populateInstaGrid(newHashtag);
+	};
+
+	InstaGrid.prototype.watchForNewImages = function(hashtag, callback) {
+
+	};
+
+
+	/**
+	 * TWO THINGS TO DO - 
+	 * Break the loading spinner and the notification box into two separate
+	 * objects.  Single responsibility principle!
+	 */
+	
+
+
+
+	 InstaGrid.prototype.addLoadingSpinner = function(containerElement) {
+	 	var loadingDiv = document.createElement('div');
+	 	var img = document.createElement('img');
+	 	img.src = 'rotary_logo.png';
+	 	
+	 	img.style.position = 'absolute';
+	 	img.style.left = '25%'
+	 	img.style.top = '25%';
+	 	img.style.width = '50%';
+	 	img.style.animation = 'spin 3s ease infinite';
+
+	 	loadingDiv.appendChild(img);
+	 	loadingDiv.className = 'loading';
+	 	containerElement.appendChild(loadingDiv);
+
+	 	this.loadingSpinnerTimeout = setTimeout(function(){
+	 		this.notification("Uh-oh, looks like we're having network issues and can't load the images from Instagram. Try refreshing, and if that doesn't work, complain to me at @AdamCoard");
+	 	}.bind(this), 5000)
+
+
+	 };
+
+
+	InstaGrid.prototype.removeLoadingSpinner = function() {
+		clearTimeout(this.loadingSpinnerTimeout);
+		var target = document.querySelectorAll(this.options.target + " .loading")[0]
+		target.style.transition = 'opacity 0.8s ease 0.8s'
+		target.style.opacity = 0;
+		
+		setTimeout(function(){
+			target.style.zIndex = -1;
+			this.notification('The Rotary Club of Downtown Victoria thinks everyone deserves a little pick me up, so we scattered happy notes around the city.  <br><br>Here are all the photos people have uploaded to Instagram and hashtagged with #'+ this.currentHashTag + ' in response!')
+		}.bind(this), 1600) //equal to the animation time + delay above.
+	};
+
+	InstaGrid.prototype.notification = function(message) {
+		//http://tympanus.net/Development/NotificationStyles/attached-flip.html
+		var notification = document.createElement('div');
+		var inner = document.createElement('div');
+		var p = document.createElement('p');
+		var closeButton = document.createElement('button');
+		
+		closeButton.textContent = 'x';
+		notification.className = 'notification show';
+		inner.className = 'notification__content';
+		p.innerHTML = message;
+
+		closeButton.addEventListener('click', this.hideNotification);
+		
+		inner.appendChild(p);
+		notification.appendChild(closeButton)
+		notification.appendChild(inner);
+		document.body.appendChild(notification);
+	};
+
+	InstaGrid.prototype.hideNotification = function(first_argument) {
+		var notification = document.querySelectorAll('.notification')[0];
+		notification.className += ' hide';
+	};
+
+
+	function extend(a, b){
+	    for(var key in b)
+	        if(b.hasOwnProperty(key))
+	            a[key] = b[key];
+	    return a;
+	}
+
+	return InstaGrid;
+})();
+
+
+
+//for demo/page specific handler
+
+grid = new Instagrid({
+	target: '.instagrid'
+});
+
+grid.changeHashTag('happynotesyyj');
+
+
+
+// function searchEventListener(){
+// 	var form = document.querySelectorAll('form')[0];
+// 	form.addEventListener("submit", function(ev){
+// 		ev.preventDefault();
+// 		var hashtag = document.querySelectorAll('input')[0].value;
+// 		grid.changeHashTag(hashtag);
+// 	} , false);
+// }
+
+// searchEventListener();
+
+</script>
+
+</body>
+</html>
