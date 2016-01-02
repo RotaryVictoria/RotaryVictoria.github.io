@@ -1146,3 +1146,7 @@ body.vintage header .brand-name {
 h3.media-heading {
   font-size: 2rem;
 }
+
+hr.full {
+  min-width: 100%;
+}
