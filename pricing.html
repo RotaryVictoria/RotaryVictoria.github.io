@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Volunteer in Victoria, Make a Difference to Our Community, Network with People who Care">
+    <meta name="author" content="Katie Coard, katiebmcoard@gmail.com">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+    <title>Volunteer in Victoria - Make a Difference with the Rotary Club of Downtown Victoria</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Font Awesome -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Default Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+   
+    <link href='https://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <!-- <link href="assets/css/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/jquery.fs.wallpaper.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/animate.css" rel="stylesheet" type="text/css"> -->
+
+    <!-- Vitality Theme CSS -->
+    <link href="assets/css/vitality-yellow.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+    body {
+        padding-top: 120px;
+        background-color: #FFFBF5;
+    }
+    
+
+    .btn {
+        font-weight: 400;
+    }
+
+    .text-container {
+        max-width: 500px;
+    }
+    </style>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              // Legend
+              ['Cause', 'Dollars'],
+              // Data
+              ['Rotary International', 38], 
+              ['District 5020', 20], 
+              // ['RCDV', 50],
+              ['Club: Conference Expenses', 16],
+              ['Club: Administration', 8.5],
+              ['Club: PR for projects', 8.5],
+              ['Club: Donation to Rotary Foundation', 7]
+            ]);
+
+            var options = {
+                title: 'Where Your Money Goes',
+                titleTextStyle: { 
+                    fontName: 'Sanchez',
+                    fontSize: 32,
+                    bold: true 
+                },
+                slices: {  
+                    2: {color: '#3A76A7'},
+                    3: {color: '#5393C8'},
+                    4: {color: '#7EB1DC'},
+                    5: {color: '#337BB7'},
+
+                    0: {color: '#2BBE83'},
+                    1: {color: '#F5D573'},
+                },
+                tooltip: {textStyle: {color: 'black'}, text: 'percentage'},
+                height: 500,
+                chartArea: {width: '80%', height: '100%', 
+                            top: '10%', left: '10%'},
+                fontName: 'Raleway',
+                legend: {alignment: 'center'},
+                pieStartAngle: 10,
+                backgroundColor: '#FFFAF2'
+                // is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+
+            google.visualization.events.addListener(chart, 'select', selectHandler);
+
+
+            chart.draw(data, options);
+
+
+            function selectHandler(){
+                var selectedItem = chart.getSelection()[0];
+                if (!selectedItem){
+                    return;
+                }
+
+                var selectedTitle = data.getValue(selectedItem.row, 0);
+                var className = titleToClassName(selectedTitle);
+                
+                var $chartInfo = $('#chart-info');
+                $chartInfo.find('.chart-text').hide();
+                $chartInfo.find('.' + className).show();
+
+                if ($chartInfo.find('.' + className).length == 0){
+                    $chartInfo.find('.default').show();
+                }
+            }
+
+            function titleToClassName(title){
+                return title.toLowerCase()
+                .replace(/:/g, "")
+                .replace(/ /g, "-")
+            }
+        }
+
+
+    </script>
+
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- Alternate Body Classes: .modern and .vintage -->
+
+<body class='vintage' id="page-top">
+
+    <!-- Navigation -->
+    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">
+                    <div>RCDV</div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#rotaryclubvictoria">About Our Club</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#whyjoinrotary">Why Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#howtojoinrotary">Join</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#whatisarotaryclub">What Is Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#work">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="pricing.html" class='ghost-button'>Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class='container'>
+
+        <div class="row">
+            <div class="col-md-8 col-sm-7">
+                <h1>Pricing</h1>
+                <p>Becoming a member is easy.  If you've been invited by the club to join as a member, you're almost there.  Just follow these simple steps:</p>
+                <ol class='bold-links'>
+                    <li><a href='#pick-your-plan'>Choose</a> your payment plan &mdash; monthly or yearly</li>
+                    <li><a href='#initiation-fee'>Pay</a> your initiaion fee if you haven't before</li>
+                    <li><a href='#follow-the-money'>Learn</a> where your money goes.</li>
+                    <li><a href='#faq'>Find</a> out the answers to frequently asked questions.</li>
+                </ol>
+
+                <p>If you haven't been invited to be a member, then come stop by some of our meetings first.  The first meeting is free!</p>
+            </div>
+
+            <div class="col-md-4 col-sm-5 notification-block">
+                    <h3 class='notification-block--header'>Important!</h3>
+                    <p>You must sign up on the <a href='applyonlineforms.html'>Membership Application Form</a> as well.  Make sure to use the same <span class='bold'>email</span> on the application form and on this page when submitting your billing info.  
+
+                    <a href="#faq-same-email">Find out why.</a>
+
+                    </p>
+                    <a href='applyonlineforms.html'>
+                        <button class="btn btn-default">
+                            Sign Up
+                        </button>
+                    </a>
+                <!-- </div> -->
+                
+            </div>
+        </div>
+
+        <div class="row content-row" id='pick-your-plan'>
+            <h2>Pick your Plan</h2>
+
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured-first">
+                    <h3 class='text-center'>Option 1:<br><sup>$</sup>25/month</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                        <li class="list-group-item">Being a Rotary member couldn't be easier.  Signup once and every month your card will be charged $25.  </li>
+                    </ul>
+                    <button class="btn btn-primary stripe-subscribe stripe-month">Sign Up</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured">
+                    <h3 class='text-center'>Option 2:<br><sup>$</sup>300/year</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                        <li class="list-group-item">Show your support!  Signup for an annual subscription and pay all your dues in one go.</li>
+                    </ul>
+                    <button class="btn btn-primary stripe-subscribe stripe-year">Sign Up</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured-last">
+                    <h3 class='text-center'>Option 3:<br>Try Before You Buy</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Not sure if you want to be a Rotarian yet? Don’t worry, just come along to your first meeting for free and see what all the fuss is about!
+                    </ul>
+                    <a href="index.html#work" class="btn btn-outline-dark">Contact Us</a> 
+                </div>
+            </div>
+        </div>
+
+        <hr class="colored full"></hr>
+
+
+        <div class="row content-row">
+            <div class="col-md-6 col-sm-6">
+                <div id='initiation-fee'>
+                    <h3>Pay Initiation Fee</h3>
+                    <p>This is a one-off cost that goes towards materials, workshops, and clothing for you. You only need to play your initiation fee once, ever.</p>
+
+                    <p class="italic muted text-center">remember to use the <span class="bold">same email</span> as above!</p>
+
+                    <button class="btn btn-primary stripe-subscribe stripe-initiation">Pay My Initiation Fee</button>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <hr class="visible-xs">
+                <p>This helps pay for special training sessions, clothing, and other one-off expenses.  It's about introducing you to Rotary and our club.  Every new member gets a special training session where we tell you everything you need to know.</p>
+                <p>If you're not sure if you've paid your initiation fee, just ask!</p>
+                <p>Confused?  <a class='bold-links'href="#faq-initiation-fee">Read the faq.</a></p>
+            </div>
+        </div>
+
+        <hr class="colored full"></hr>
+
+        <div id="follow-the-money" class='col-sm-12 col-md-3 col-lg-3'>
+            <div class="col-sm-6 col-md-12">
+                <h3>Our Club</h3>
+                <p>You know us, you love us, and we love you too. While we try to rely mostly on fundraising, your dues keep us afloat.</p>
+                <a href="index.html#rotaryclubvictoria"><button class='btn btn-outline-dark'>Find Out More</button></a>
+            </div>
+            <hr class='full hidden-sm'>
+            <div class="col-sm-6 col-md-12">
+                <h3>Rotary International</h3>
+                <p>Rotary International connects us with a diverse range of clubs all over the world.  <abbr title="Rotary International">RI</abbr> is one of the best charities with making sure every dollar goes to the cause, not to overhead.</p>
+
+
+                <a href="https://www.rotary.org/"><button class='btn btn-outline-dark'>Find Out More</button></a>
+            </div>
+        </div>
+
+        <hr class='full visible-sm'>
+
+        <div id="charts" class='col-sm-12 col-md-9 col-lg-9'>
+            <h3>Follow the Money</h3>
+            <p>It's your money, you should know where it goes.  Click in the chart to change the text below.</p>
+            <div id="piechart"></div>
+
+            <div id="chart-info" class='well'>
+                <p class='chart-text default'>Click on the different sections of the pie chart to get more information.</p>
+
+                <p class="chart-text club-donation-to-rotary-foundation">
+                    <span class="chart-text--header">Club: Donation to Rotary Foundation</span>
+                    <span><a href="https://www.rotary.org/myrotary/en/rotary-foundation">The Rotary Foundation</a> is the arm of Rotary directly involved with charities and grants.  Basically, clubs (like ours) apply to the Foundation for grants when they have causes that are worth supproting.  Every club is expected to make a donation to the Rotary Foundation &mdash; some ask their members for donations once a year, we're making it part of your membership dues.</span>
+                </p>
+
+                <p class="chart-text club-pr-for-projects">
+                    
+                    <span class="chart-text--header">Club: PR for projects</span>
+                    <span>The only way our projects succeed is if people know about them. This way, we can get the word out on good causes <em>before</em> we have time to start fundraising. Projects will be expected to pay back their PR costs from fundraising if applicable.</span>
+
+                </p>
+                <p class="chart-text club-administration">
+                    <span class="chart-text--header">Club: Administration</span>
+                    <span>From hosting this site to buying office supplies, running a club costs money.  All expenses must be approved by the treasurer to ensure accountability.</span>
+                </p>
+                <p class="chart-text club-conference-expenses">
+                    <span class="chart-text--header">Club: Conference Expenses</span>
+                    <span>Some conferences, like the President Elect Training Seminar, are mandatory expenses for the club.  The club also wants to have some funds available to be able to sponsor members to go on conferences, but in order to keep the costs down we have kept this contribution relatively small.</span>
+                </p>
+                <p class="chart-text district-5020">
+                    <span class="chart-text--header">District 5020</span>
+                    <span>Just like Canada has provinces, Rotary has districts.  District 5020 includes Vancouver island, the lower mainland, and western Washington state. </span>
+                </p>
+                <p class="chart-text rotary-international">
+                    <span class="chart-text--header">Rotary International</span>
+                    <span>Our club is billed by RI for each member we have.  Rotary uses those funds to help out clubs around the world and tackle issues that are too big for any individual clubs.  One of RI's big objectives has been eliminating polio, something it's done tremendously well.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container" id="faq">
+        <div class="col-sm-12"><h2>Frequently Asked Questions</h2></div>
+        <div class="col-sm-10 col-md-8">
+            <h3 class='faq--question'>Can I pay with cash or cheque?</h3>
+            <p class='faq--answer'>
+                We're happy to accept cash or cheque for yearly payments.  However, we prefer you do not pay cash or cheque for monthly payments.  We don't want our treasurer to feel like a debt-collector, and it's much less work for everyone this way.  So, if you want to do monthly payments we ask you do them online via this page. 
+            </p>
+
+            <p class="faq--answer">
+                That being said, if for some reason you can't do online purchases and need to do monthly payments, get in touch.  We can work something out.
+            </p>
+
+            <h3 class="faq--question">Was my payment processed?  The Stripe box where I inputted my credit disappeared.</h3>
+
+            <p class="faq--answer">
+                If your payment is a success, you'll see a quick green checkmark and then the payment box will disappear. If your card is declined, then the credit card box will shake and turn red, indicating a problem.
+
+                <br>
+
+                So yes, if the box disappeared you're all good.
+            </p>
+
+          <!--   <h3 class='faq--question'>Can you gimme a lorem ipsum in here?</h3>
+            <p class='faq--answer'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+
+            <h3 class='faq--question' id='faq-same-email'>Why do I have to use the same email?</h3>
+            <p class="faq--answer">
+                We identify you in our billing system (Stripe) via your email.  So, it's important that you use the same email address on the <a href='applyonlineforms.html'>Membership Application Form</a> as you do when making your payments on this billing page.
+            </p>
+
+            <h3 class="faq--question" id='faq-initiation-fee'>Do I have to pay the initiation fee?</h3>
+            <p class="faq--answer">
+                You must pay your initiation fee unless you have already paid once before (e.g. it is your second year as a member).  If you're unsure you can ask us to check.  Yes, this means you must enter your credit card in twice. 
+            </p>
+
+            <h3 class="faq--question">Why do I have to pay twice?</h3>
+            <p class="faq--answer">
+                One transaction is to setup your subscription for becoming a member - this is a recurring charge.  The other is to cover your initiation fee - a one time onl charge.   Since mixing recurring charges and one time charges is hard, and our web developer is lazy, we've split them up into two here.
+            </p>
+            <p class="faq--answer italic">Remember to use the same email!</p>
+
+            <h3 class='faq--question'>Why does the club have dues?</h3>
+            <p class="faq--answer">Part of the reason is to pay our bills.  For each member of our club, Rotary International will send the club a bill.  That's where around half of your dues go.  The other half go to the club so we can fund initaitives</p>
+
+            <h3 class="faq--question">Can I get a receipt?  Is it tax-deductible?</h3>
+            <p class="faq--answer">
+                One will be mailed to you.  And unfortunately, donations to the club do not count as tax-deductible at this time.  We're looking into it!
+            </p>
+
+            <h3 class="faq--question">What happens if a recurring-payment doesn't go through?</h3>
+            <p class="faq--answer">
+                Our system will automatically try to bill you again on 3 times over the span of a week.  If all of those fail, the subscription is automatically cancelled, and we'll all receive emails telling us so.
+            </p>
+
+            <h3 class="faq--question">My card was declined for the initiation fee, when I know it shouldn't be.  What's up?</h3>
+            <p class="faq--answer">
+                Please let us know if this happens to you, because we've only seen it happen once.  We suspect it's an issue of having two credit card transactions in a short time being automatically blocked for fraud protection.  Either way, let us know and we'll find a solution.
+            </p>
+
+            <h3 class="faq--question">I'm still lost.  Can I talk to a person?</h3>
+            <p class="faq--answer">
+                Of course! Just send us an email at <a href="mailto:rotarydowntownvictoria@gmail.com">rotarydowntownvictoria@gmail.com</a>, or flag someone down at a meeting.
+            </p>
+
+        </div>
+    </section>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id='payment-success-modal'>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Success!</h4>
+          </div>
+          <div class="modal-body">
+            <p>Payment received! Wasn't that easy?</p>
+            <p>We've sent a receipt to <span id='js-user-email'></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Okay</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <!-- Core Scripts -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script src="assets/js/plugins/jquery.easing.min.js"></script>
+    <script src="assets/js/plugins/classie.js"></script>
+
+    <script src="assets/js/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.fs.wallpaper.js"></script>
+    <script src="assets/js/plugins/jquery.mixitup.js"></script>
+    <script src="assets/js/plugins/wow/wow.min.js"></script>
+    <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
+
+    <!-- Vitality Theme Scripts -->
+    <script src="assets/js/vitality.js"></script>
+
+    <!-- Stripe / Custom Purchasing -->
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- TypeKit -->
+    <script src="//use.typekit.net/kgs8msm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <!-- Custom Scripts for Payments on this page -->
+    <script src="payment/payment.js"></script>
+    
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69864916-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+ 
+</body>
+
+</html>
