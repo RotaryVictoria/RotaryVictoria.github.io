@@ -1149,4 +1149,128 @@ h3.media-heading {
 
 hr.full {
   min-width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+#initiation-fee {
+    background: rgb(228, 241, 248); /*why to colors?*/
+    padding: 1.5em 2em 3em 2em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#initiation-fee p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.notification-block {
+  background-color: #C0C8E2;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+@media (min-width: 768px) { 
+  .notification-block {
+    /*If you adjust the size of this block you'll have to adjust this too*/
+    -webkit-transform: translateY(15%);
+        -ms-transform: translateY(15%);
+    transform: translateY(15%);
+  }
+
+  .pricing-block button, .pricing-block a {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+
+}
+
+@media (max-width: 767px) { 
+  .notification-block {
+    margin: 25px;
+  }
+}
+
+.notification-block--header {
+  margin-bottom: 0.63em;
+}
+
+.notification-block a {
+  color: white;
+}
+
+.notification-block button { 
+  text-align: center; 
+  margin: 0 auto; 
+  display: block; 
+  margin-bottom: 0.5em;
+
+  -webkit-transition: all 0.5s;-moz-transition: all 0.5s;transition: all 0.5s;}
+
+.notification-block a:hover, .notification-block button:hover {
+  color: white;
+  background-color: black;
+}
+
+.bold {font-weight: bold;}
+.bold-links a, a.bold-links {
+  font-weight: bold;
+}
+
+.bold-links a:hover,
+a.bold-links:hover,
+.block-links a:hover, a.block-links:hover {
+  background-color: black;
+  color: white;
+}
+
+.muted {
+  color: grey;
+  font-size: 12px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+.pricing-block {
+  background: #F9F3EC;
+  border-radius: 5px;
+  padding: 30px;
+  transition: 0.3s;
+  min-height: 500px;
+
+  position: relative;
+}
+
+
+
+.pricing-block:hover {
+  background: #EFEAE3;
+}
+
+@media (max-width: 767px) { 
+  .pricing-block {
+    min-height: auto;
+  }
+}
+
+@media (min-width: 992px) { 
+  .pricing-block {
+    min-height: 400px;
+  }
+}
+
+.chart-text:not(.default) {
+  display: none;
+}
+
+.chart-text--header {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
 }
