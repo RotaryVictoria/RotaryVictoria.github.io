@@ -23,14 +23,6 @@
     <link href='https://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
-    <!-- <link href="assets/css/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/plugins/jquery.fs.wallpaper.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/plugins/animate.css" rel="stylesheet" type="text/css"> -->
-
     <!-- Vitality Theme CSS -->
     <link href="assets/css/vitality-yellow.css" rel="stylesheet" type="text/css">
 
@@ -52,85 +44,7 @@
     }
     </style>
     
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-        google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              // Legend
-              ['Cause', 'Dollars'],
-              // Data
-              ['Rotary International', 38], 
-              ['District 5020', 20], 
-              // ['RCDV', 50],
-              ['Club: Conference Expenses', 16],
-              ['Club: Administration', 8.5],
-              ['Club: PR for projects', 8.5],
-              ['Club: Donation to Rotary Foundation', 7]
-            ]);
-
-            var options = {
-                title: 'Where Your Money Goes',
-                titleTextStyle: { 
-                    fontName: 'Sanchez',
-                    fontSize: 32,
-                    bold: true 
-                },
-                slices: {  
-                    2: {color: '#3A76A7'},
-                    3: {color: '#5393C8'},
-                    4: {color: '#7EB1DC'},
-                    5: {color: '#337BB7'},
-
-                    0: {color: '#2BBE83'},
-                    1: {color: '#F5D573'},
-                },
-                tooltip: {textStyle: {color: 'black'}, text: 'percentage'},
-                height: 500,
-                chartArea: {width: '80%', height: '100%', 
-                            top: '10%', left: '10%'},
-                fontName: 'Raleway',
-                legend: {alignment: 'center'},
-                pieStartAngle: 10,
-                backgroundColor: '#FFFAF2'
-                // is3D: true,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-
-            google.visualization.events.addListener(chart, 'select', selectHandler);
-
-
-            chart.draw(data, options);
-
-
-            function selectHandler(){
-                var selectedItem = chart.getSelection()[0];
-                if (!selectedItem){
-                    return;
-                }
-
-                var selectedTitle = data.getValue(selectedItem.row, 0);
-                var className = titleToClassName(selectedTitle);
-                
-                var $chartInfo = $('#chart-info');
-                $chartInfo.find('.chart-text').hide();
-                $chartInfo.find('.' + className).show();
-
-                if ($chartInfo.find('.' + className).length == 0){
-                    $chartInfo.find('.default').show();
-                }
-            }
-
-            function titleToClassName(title){
-                return title.toLowerCase()
-                .replace(/:/g, "")
-                .replace(/ /g, "-")
-            }
-        }
+    
 
 
     </script>
@@ -231,7 +145,7 @@
                     <p>Don't miss out, buy tickets<a href='applyonlineforms.html'> online</a> now! You can also reserve your tickets with our easy <a href='#reserve'>online reservation form</a>.</p> 
 
                     <p>Got Questions? Check out our <a href='#faq'>FAQ.</a> or send us a <a href='https://victoriarotary.com/index.html#work'>message</a></p>
-                        <button class="btn btn-default">
+                        <button class="btn btn-default js-open-payment-modal">
                             Get Tickets!
                         </button>
                 <!-- </div> -->
@@ -515,19 +429,35 @@ USA</textarea>
         </div>
     </section>
 
-    <div class="modal fade" tabindex="-1" role="dialog" id='payment-success-modal'>
+    <div class="modal fade" tabindex="-1" role="dialog" id='ticket-choice-modal'>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Success!</h4>
+            <h4 class="modal-title">Choose Your Ticket</h4>
           </div>
           <div class="modal-body">
-            <p>Payment received! Wasn't that easy?</p>
-            <p>We've sent a receipt to <span id='js-user-email'></span></p>
+            <!-- $20 per ticket
+            $35 for 2 tickets
+            $15 for Red Hot Swing Members
+            $15 for Students -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <button class="btn btn-warning" id='buy-swing-tickets'>Single Ticket</button>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-warning">Couples Ticket</button>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-warning" data-toggle="popover" data-placement="left" data-content="Make sure to bring your student card!">Student Ticket</button>
+                </div>
+                
+                <p>Red Hot Swing member? <a href="#">Enter your coupon code here for $5 off!</a></p>
+            </div>
+            <!-- <p>We've sent a receipt to <span id='js-user-email'></span></p> -->
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Okay</button>
+            <button type="button" class="btn btn-primary" data-dismiss='modal'>Okay</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -562,7 +492,49 @@ USA</textarea>
     <script>try{Typekit.load();}catch(e){}</script>
 
     <!-- Custom Scripts for Payments on this page -->
-    <script src="payment/payment.js"></script>
+
+
+    <script>
+
+        $('.js-open-payment-modal').click(function(){$('#ticket-choice-modal').modal('show')})
+
+        function createStripeCheckoutOnClick(config, element){
+            var stripeSwing = StripeCheckout.configure(config);
+            element.on('click', function(){stripeSwing.open()});
+        }
+
+
+        var swingStripeConfig = {
+            key: 'pk_test_4tURHGoBPy9cryJxpXql7zX0',
+            // key: 'pk_live_kbw7MfDr5mZmhc7XQPfqYstI',
+            panelLabel: "LET'S GO",
+            name: "Single Ticket",
+            description: "Admits one!",
+            amount: 2000,
+            image: "https://victoriarotary.com/assets/img/RotaryMoE_Black.png",
+            allowRememberMe: false,
+            // token: uploadSimpleToken,
+            token: function(token){
+                $.post('/events/swingforliteracy/buyTicket.php', 
+                    {
+                        stripeToken: token.id, 
+                        email: token.email,
+                        description: "Swing for Literacy Single Ticket Purchase"
+
+                })
+                .then(console.log.bind(console));
+            },
+
+        };
+
+// $.post('/events/swingforliteracy/buyTicket.php', {stripeToken: 123, email: 456}).then(console.log.bind(console));
+
+        createStripeCheckoutOnClick(swingStripeConfig, $('#buy-swing-tickets'))
+
+        
+        
+
+    </script>
     
 
 
