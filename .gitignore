@@ -1,1 +1,3 @@
 sftp-config.json
+payment/php/billing.php
+payment/php/Database.php
