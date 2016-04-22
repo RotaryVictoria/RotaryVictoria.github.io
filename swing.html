@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Interested in swing dance? Passionate about Literacy? Join us and dance the night away knowing you are supporting 1000x5 children's literacy!">
+    <meta name="author" content="Katie Coard, katiebmcoard@gmail.com">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+    <title>Swingin' For Literacy: Swing Dance For A Cause</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Font Awesome -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Default Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+   
+    <link href='https://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <!-- <link href="assets/css/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/jquery.fs.wallpaper.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugins/animate.css" rel="stylesheet" type="text/css"> -->
+
+    <!-- Vitality Theme CSS -->
+    <link href="assets/css/vitality-yellow.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+    body {
+        padding-top: 120px;
+        background-color: #FFFBF5;
+    }
+    
+
+    .btn {
+        font-weight: 400;
+    }
+
+    .text-container {
+        max-width: 500px;
+    }
+    </style>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              // Legend
+              ['Cause', 'Dollars'],
+              // Data
+              ['Rotary International', 38], 
+              ['District 5020', 20], 
+              // ['RCDV', 50],
+              ['Club: Conference Expenses', 16],
+              ['Club: Administration', 8.5],
+              ['Club: PR for projects', 8.5],
+              ['Club: Donation to Rotary Foundation', 7]
+            ]);
+
+            var options = {
+                title: 'Where Your Money Goes',
+                titleTextStyle: { 
+                    fontName: 'Sanchez',
+                    fontSize: 32,
+                    bold: true 
+                },
+                slices: {  
+                    2: {color: '#3A76A7'},
+                    3: {color: '#5393C8'},
+                    4: {color: '#7EB1DC'},
+                    5: {color: '#337BB7'},
+
+                    0: {color: '#2BBE83'},
+                    1: {color: '#F5D573'},
+                },
+                tooltip: {textStyle: {color: 'black'}, text: 'percentage'},
+                height: 500,
+                chartArea: {width: '80%', height: '100%', 
+                            top: '10%', left: '10%'},
+                fontName: 'Raleway',
+                legend: {alignment: 'center'},
+                pieStartAngle: 10,
+                backgroundColor: '#FFFAF2'
+                // is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+
+            google.visualization.events.addListener(chart, 'select', selectHandler);
+
+
+            chart.draw(data, options);
+
+
+            function selectHandler(){
+                var selectedItem = chart.getSelection()[0];
+                if (!selectedItem){
+                    return;
+                }
+
+                var selectedTitle = data.getValue(selectedItem.row, 0);
+                var className = titleToClassName(selectedTitle);
+                
+                var $chartInfo = $('#chart-info');
+                $chartInfo.find('.chart-text').hide();
+                $chartInfo.find('.' + className).show();
+
+                if ($chartInfo.find('.' + className).length == 0){
+                    $chartInfo.find('.default').show();
+                }
+            }
+
+            function titleToClassName(title){
+                return title.toLowerCase()
+                .replace(/:/g, "")
+                .replace(/ /g, "-")
+            }
+        }
+
+
+    </script>
+
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- Alternate Body Classes: .modern and .vintage -->
+
+<body class='vintage' id="page-top">
+
+    <!-- Navigation -->
+    <!-- Note: navbar-default and navbar-inverse are both supported with this theme. -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">
+                    <div>RCDV</div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#rotaryclubvictoria">About Our Club</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#whyjoinrotary">Why Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#howtojoinrotary">Join</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#whatisarotaryclub">What Is Rotary?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#work">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="pricing.html" class='ghost-button'>Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+     <!-- <header style="background-image: url('assets/img/bg-header.jpg');"> -->
+    <header style="background-image: url('assets/img/Downtown_Victoria.jpg');">
+
+        <div class="intro-content">
+            <img src="assets/img/RotaryMoE_Black.png" class="img-responsive img-centered hero-img" alt="">
+            <div class="brand-name">Rotary Club</div>
+            <hr class="colored">
+            <div class="brand-name-subtext">of Downtown Victoria</div>
+        </div>
+    </header>
+     <div class='container'>
+
+        <div class="row">
+            <div class="col-md-8 col-sm-7">
+                <h1>SWINGIN' FOR LITERACY</h1>
+                <p>Interested in swing dance? Love Red Hot Swing? Passionate about Literacy? For one night only, you can dance the night away knowing you are helping provide free books to children in Victoria! All proceeds from this one-off event will go towards <a href='#1000x5'>1000x5.ca</a>.</p> 
+                <h3>Where?</h3>
+                <p>Dance Victoria (2750 Quadra St)</p>
+                <h3>When?</h3>
+                <p>Saturday May 14th 7pm-11pm</p>
+                <h3>Tell Me More!</h3>
+                <p>Your favourite studio<a href="http://www.redhotswing.com/"> Red Hot Swing</a> will be teaching us to swing dance with a free swing dance lesson. They will also be providing swing dance tunes to keep you dancing all night long! There will be snacks and drinks (non alcoholic) ready for purchase. As well as a one of a kind raffle where you can win some unique prizes.</p>
+                <p><strong> Show your support and buy your tickets online now! Get these great prices while they last!</strong></p>
+                <ul class='bold-links'>
+                    <li>$20 per ticket</li>
+                    <li>$35 for 2 tickets</li>
+                    <li>$15 for Red Hot Swing Members</li>
+                    <li>$15 for Students</li>
+                </ul>
+                <p>Why 1000x5? Click <a href='#1000x5'>here</a> to find out more!</p>
+            </div>
+
+            <div class="col-md-4 col-sm-5 notification-block">
+                    <h3 class='notification-block--header'>BUY YOUR TICKETS</h3>
+                    <p>Don't miss out, buy tickets<a href='applyonlineforms.html'> online</a> now! You can also reserve your tickets with our easy <a href='#reserve'>online reservation form</a>.</p> 
+
+                    <p>Got Questions? Check out our <a href='#faq'>FAQ.</a> or send us a <a href='https://victoriarotary.com/index.html#work'>message</a></p>
+                        <button class="btn btn-default">
+                            Get Tickets!
+                        </button>
+                <!-- </div> -->
+                
+            </div>
+        </div>
+
+     <!--    <div class="row content-row" id='pick-your-plan'>
+            <h2>Pick your Tickets</h2>
+
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured-first">
+                    <h3 class='text-center'>Option 1:<br><sup>$</sup>20/For 1 Ticket</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                            <li class="list-group-item">For $20 ticket, you get entry for one person, a free dance lesson, swing music to dance the night away to and know you are helping children's literacy here in Victoria.</li>
+                        </ul>
+                    <button class="btn btn-primary stripe-subscribe stripe-month">Buy Now</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured">
+                    <h3 class='text-center'>Option 2:<br><sup>$</sup>35/for 2 Tickets</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                            <li class="list-group-item">For $35 ticket, you get entry for two person, a free dance lesson, swing music to dance the night away to and know you are helping children's literacy here in Victoria.</li>
+                        </ul>
+                    <button class="btn btn-primary stripe-subscribe stripe-year">Buy Now</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 pricing-block">
+                <div class="pricing-item featured-last">
+                    <h3 class='text-center'>Option 3:<br><sup>$</sup>15/for Red Hot Swing Members</h3>
+                    <hr class="colored">
+                    <ul class="list-group">
+                            <li class="list-group-item">ONLY FOR RED HOT SWING MEMBERS AND STUDENTS. For $15 ticket, you get entry for one person, a free dance lesson, swing music to dance the night away to and know you are helping children's literacy here in Victoria.</li>
+                        </ul>
+                     <button class="btn btn-primary stripe-subscribe stripe-year">Buy Now</button> 
+                </div>
+            </div>
+        </div> -->
+
+        <hr class="colored full"></hr>
+<section id="1000x5" class="bg-gray">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-12 wow fadeIn">
+                    <h1>Introducing 1000x5</h1>
+                    <p>Literacy changes lives. Did you know? A child who hears 1000 books by the age of 5 will enjoy more success in learning.Many families on South Vancouver Island don’t have the resources to buy books. 1000x5 provides families with free books so that every child has a greater opportunity to succeed.</p>
+                    <p>Thank you for your support. Just by buying a ticket for the swing dance will help us ensure that 4000+ local babies and toddlers are regularly receving books.</p>
+                    <hr class="colored">
+                </div>
+            </div>
+            <div class="row text-center content-row">
+                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".2s">
+                    <div class="about-content">
+                        <i class="fa fa-book fa-4x"></i>
+                        <h3>We Collect Books</h3>
+                        <p>Families donate gently used books for babies and preschoolers at local elementary schools. Our partners also donate books or provide financial assistance so that we can purchase books.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
+                    <div class="about-content">
+                        <i class="fa fa-child fa-4x"></i>
+                        <h3>We Sort Books</h3>
+                        <p>Our volunteers meet weekly to clean and sort the donated books and put them into gift bags. We use gift bags to convey the value of the books. By presenting books in an appealing package we convey that reading is a special activity and that books are treasured.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".6s">
+                    <div class="about-content">
+                        <i class="fa fa-globe fa-4x"></i>
+                        <h3>We Partner With  Our Community</h3>
+                        <p>The gift bags are then distributed to Strong Start Centres and various agencies that work with families. These organizations get the books into the homes of families with small children.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <h3>Visit us on our <a href="https://1000x5.ca/">1000x5.ca website</a> and on <a href="https://www.facebook.com/1000x5.ca/?fref=ts">Facebook.</a></h3>
+        </div>
+    </section>
+        
+
+        <hr class='full visible-sm'>
+
+    <form id='reserve' class="form-horizontal" action="https://formspree.io/RotaryDowntownVictoria@gmail.com" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Reserve Your Swing Dance Tickets</legend>
+<p>Make sure you don't miss out! Reserve your tickets online today. We will either have them waiting for you on the night or can drop them off to you at your convenience. Fill out the form below and we will be in touch</p>
+<!-- Text input-->
+<h3>Your Information</h3>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Name">Name (required)</label>  
+  <div class="col-md-4">
+  <input id="Name" name="Name" type="text" placeholder="Mickey Mouse" class="form-control input-md" required="">
+    
+  </div>
+</div> 
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Address (required)</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea">Disneyland
+California
+USA</textarea>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Email">Email (required)</label>  
+  <div class="col-md-4">
+  <input id="Email" name="Email" type="text" placeholder="mickey_mouse1950@gmail.com" class="form-control input-md">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Phone">Contact Phone Number (required)</label>  
+  <div class="col-md-4">
+  <input id="Phone" name="Phone" type="text" placeholder="250-999-4545" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Rotarybefore">Have would you like to collect your reserved tickets?</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="Rotarybefore-0">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-0" value="collectonnight">
+      Collect on the night
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="Rotarybefore-1">
+      <input type="checkbox" name="Rotarybefore" id="Rotarybefore-1" value="dropticketsoff">
+      Please drop off my tickets to me
+    </label>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<p>Please indicate how many of each type of ticket you would like to reserve:</p>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Birth Date">How many $20 (permits entry for 1 person) tickets?</label>  
+  <div class="col-md-4">
+  <input id="$20tickets" name="$20 Tickets" type="text" placeholder="20" class="form-control input-md">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Birth Date">How many $35 (permits entry for 2 people) tickets?</label>  
+  <div class="col-md-4">
+  <input id="$20tickets" name="$20 Tickets" type="text" placeholder="20" class="form-control input-md">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Birth Date">How many $15 (Red Hot Swing Members) tickets?</label>  
+  <div class="col-md-4">
+  <input id="$20tickets" name="$20 Tickets" type="text" placeholder="20" class="form-control input-md">
+    
+  </div>
+</div>
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Payment">How would you like to pay for the tickets on the night? (required)</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="Payment-0">
+      <input type="radio" name="Payment" id="Payment-0" value="cash" checked="checked">
+      Cash
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-1">
+      <input type="radio" name="Payment" id="Payment-1" value="cheque">
+      Cheque
+    </label>
+    </div>
+  <div class="radio">
+    <label for="Payment-4">
+      <input type="radio" name="Payment" id="Payment-4" value="credit">
+      Credit Card
+    </label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="info">How did you hear about this event?</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="info-0">
+      <input type="checkbox" name="info" id="info-0" value="facebook">
+      Facebook
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-1">
+      <input type="checkbox" name="info" id="info-1" value="website">
+      Website
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-2">
+      <input type="checkbox" name="info" id="info-2" value="wordofmouth">
+      Word of Mouth
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-3">
+      <input type="checkbox" name="info" id="info-3" value="twitter">
+      Twitter
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-4">
+      <input type="checkbox" name="info" id="info-4" value="instagram">
+      Instagram
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="info-5">
+      <input type="checkbox" name="info" id="info-5" value="anotherotaryclub">
+      Another Rotary Club
+    </label>
+    </div>
+  </div>
+</div>
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="feedback">Any questions or feedback?</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="feedback" name="feedback"></textarea>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">Thank you for supporting 1000x5. Your tickets will be available for collection on the night from 6:45pm onwards. Please bring your confirmation email as proof of purchase. </label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Reserve</button>
+  </div>
+</div>
+<h3>Got Questions? Check out our <a href='#faq'>FAQ.</a></h3>
+</fieldset>
+</form>
+<hr class="colored full"></hr>
+    <section class="container" id="faq">
+        <div class="col-sm-12"><h2>Frequently Asked Questions</h2></div>
+        <div class="col-sm-10 col-md-8">
+            <h3 class='faq--question'>Can I pay with cash or cheque?</h3>
+            <p class='faq--answer'>
+                We're happy to accept cash or cheque. Just head to our online <a href="#reserve">reservation form</a> to reserve your tickets and select pay cash or cheque on the night. 
+            </p>
+
+            <h3 class="faq--question">Was my payment processed?  The Stripe box where I inputted my credit disappeared.</h3>
+
+            <p class="faq--answer">
+                If your payment is a success, you'll see a quick green checkmark and then the payment box will disappear. If your card is declined, then the credit card box will shake and turn red, indicating a problem.
+
+                <br>
+
+                So yes, if the box disappeared you're all good.
+            </p>
+
+            <h3 class="faq--question">Can I get a receipt?  Is it tax-deductible?</h3>
+            <p class="faq--answer">
+                One will be mailed to you.  And unfortunately, donations to the club do not count as tax-deductible at this time.  We're looking into it!
+            </p>
+
+            <h3 class="faq--question">My card was declined for the payment, when I know it shouldn't be.  What's up?</h3>
+            <p class="faq--answer">
+                Please let us know if this happens to you, because we've only seen it happen once.  We suspect it's an issue of having two credit card transactions in a short time being automatically blocked for fraud protection.  Either way, let us know and we'll find a solution.
+            </p>
+
+            <h3 class="faq--question">I'm still lost.  Can I talk to a person?</h3>
+            <p class="faq--answer">
+                Of course! Just send us an email at <a href="mailto:rotarydowntownvictoria@gmail.com">rotarydowntownvictoria@gmail.com</a>.
+            </p>
+
+        </div>
+    </section>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id='payment-success-modal'>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Success!</h4>
+          </div>
+          <div class="modal-body">
+            <p>Payment received! Wasn't that easy?</p>
+            <p>We've sent a receipt to <span id='js-user-email'></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Okay</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    <!-- Core Scripts -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script src="assets/js/plugins/jquery.easing.min.js"></script>
+    <script src="assets/js/plugins/classie.js"></script>
+
+    <script src="assets/js/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.fs.wallpaper.js"></script>
+    <script src="assets/js/plugins/jquery.mixitup.js"></script>
+    <script src="assets/js/plugins/wow/wow.min.js"></script>
+    <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
+
+    <!-- Vitality Theme Scripts -->
+    <script src="assets/js/vitality.js"></script>
+
+    <!-- Stripe / Custom Purchasing -->
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- TypeKit -->
+    <script src="//use.typekit.net/kgs8msm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <!-- Custom Scripts for Payments on this page -->
+    <script src="payment/payment.js"></script>
+    
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69864916-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+ 
+</body>
+
+</html>
