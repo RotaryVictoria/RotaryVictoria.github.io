@@ -512,12 +512,15 @@ USA</textarea>
         }
 
         function uploadSimpleToken(description, identifier, token){
-            $.post('/events/swingforliteracy/buyTicket.php', {
-                    stripeToken: token.id, 
-                    email: token.email,
-                    'identifier': identifier,
+            $.post('/events/swingforliteracy/buyTicket.php', 
+            {
+                stripeToken: token.id, 
+                email: token.email,
+                identifier: identifier,
             })
-            .then(console.log.bind(console));
+            .then(function(res){
+                $('#ticket-choice-modal').modal('hide');
+            });
         }
 
 

@@ -18,7 +18,7 @@ else {
 	    'card'  => $token
 	));
 
-	switch $identifier {
+	switch ($identifier) {
 		case "swing_for_literacy_single":
 			$amount = 2000;
 			break;
@@ -41,5 +41,12 @@ else {
 	    'currency' => 'cad',
 	    'description' => $description,
 	));
+
+	echo json_encode([
+		'success' => 'true',
+		'identifier' => $identifier,
+	]);
+
+	return;
 }
 
