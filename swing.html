@@ -146,6 +146,7 @@
                     <li><a href="" class="buy-rhs-tickets">$15 for Students</a></li>
                 </ul>
                 <p>Why 1000x5? Click <a href='#1000x5'>here</a> to find out more!</p>
+                <p>Please print your receipt as proof of purchase!</p>
             </div>
 
             <div class="col-md-4 col-sm-5 notification-block">
@@ -475,7 +476,7 @@ USA</textarea>
         $('.js-rhs-enter-code').click(function(){
             //lol, this is exactly $5 worth of security through security
             var code = prompt("Enter the discount code.");
-            if (code.toUpperCase() === 'RHS'){
+            if (code.toUpperCase() === 'RHS' || code.toUpperCase() === 'SDAV'){
                 $('#buy-rhs-tickets').click();
             }
             else {
