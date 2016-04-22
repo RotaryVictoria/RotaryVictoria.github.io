@@ -132,10 +132,10 @@
                 <p>Your favourite studio<a href="http://www.redhotswing.com/"> Red Hot Swing</a> will be teaching us to swing dance with a free swing dance lesson. They will also be providing swing dance tunes to keep you dancing all night long! There will be snacks and drinks (non alcoholic) ready for purchase. As well as a one of a kind raffle where you can win some unique prizes.</p>
                 <p><strong> Show your support and buy your tickets online now! Get these great prices while they last!</strong></p>
                 <ul class='bold-links'>
-                    <li>$20 per ticket</li>
-                    <li>$35 for 2 tickets</li>
-                    <li>$15 for Red Hot Swing Members</li>
-                    <li>$15 for Students</li>
+                    <li><a href="" class='buy-single-ticket'>$20 per ticket</a></li>
+                    <li><a href="" class="buy-couple-tickets">$35 for 2 tickets</a></li>
+                    <li><a href="" class="js-rhs-enter-code">$15 for Red Hot Swing Members (with discount code)</a></li>
+                    <li><a href="" class="buy-rhs-tickets">$15 for Students</a></li>
                 </ul>
                 <p>Why 1000x5? Click <a href='#1000x5'>here</a> to find out more!</p>
             </div>
@@ -439,17 +439,17 @@ USA</textarea>
           <div class="modal-body">
              <p>Red Hot Swing member? <a href="#" class='js-rhs-enter-code'>Enter your coupon code here for $5 off!</a></p>
 
-             <input type='hidden' id='buy-rhs-tickets' />
+             <input type='hidden' class='buy-rhs-tickets' />
 
             <div class="row">
                 <div class="col-sm-4">
-                    <button class="btn btn-warning" id='buy-single-ticket'>Single Ticket</button>
+                    <button class="btn btn-warning buy-single-ticket">Single Ticket</button>
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn btn-warning" id='buy-couple-tickets'>Couple's Ticket</button>
+                    <button class="btn btn-warning buy-couple-tickets">Couple's Ticket</button>
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn btn-warning" id='buy-student-ticket'>Student Ticket</button>
+                    <button class="btn btn-warning buy-student-ticket">Student Ticket</button>
                 </div>
             </div>
           </div>
@@ -508,7 +508,7 @@ USA</textarea>
 
         function createStripeCheckoutOnClick(config, element){
             var stripeSwing = StripeCheckout.configure(config);
-            element.on('click', function(){stripeSwing.open()});
+            element.on('click', function(e){stripeSwing.open(); return false;});
         }
 
         function uploadSimpleToken(description, identifier, token){
@@ -517,6 +517,7 @@ USA</textarea>
                 stripeToken: token.id, 
                 email: token.email,
                 identifier: identifier,
+                description: description,
             })
             .then(function(res){
                 $('#ticket-choice-modal').modal('hide');
@@ -555,7 +556,7 @@ USA</textarea>
 
             var studentStripeConfig = {
                 name: "Student Ticket",
-                description: "Admits one! Save $5. Bring your student card.",
+                description: "Save $5. Bring your student card.",
                 amount: 1500,
                 //Definitely making this more complicated than I need to, 
                 //but that's what learning projects are for.
@@ -577,13 +578,10 @@ USA</textarea>
             $.extend(studentStripeConfig, masterStripeConfig);
             $.extend(rhsStripeConfig, masterStripeConfig);
 
-            createStripeCheckoutOnClick(singleStripeConfig, $('#buy-single-ticket'));
-            createStripeCheckoutOnClick(coupleStripeConfig, $('#buy-couple-tickets'));
-            createStripeCheckoutOnClick(studentStripeConfig, $('#buy-student-ticket'));
-
-
-
-            createStripeCheckoutOnClick(rhsStripeConfig, $('#buy-rhs-tickets'));
+            createStripeCheckoutOnClick(singleStripeConfig, $('.buy-single-ticket'));
+            createStripeCheckoutOnClick(coupleStripeConfig, $('.buy-couple-tickets'));
+            createStripeCheckoutOnClick(studentStripeConfig, $('.buy-student-ticket'));
+            createStripeCheckoutOnClick(rhsStripeConfig, $('.buy-rhs-tickets'));
 
         }
 

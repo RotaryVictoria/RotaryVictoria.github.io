@@ -40,6 +40,7 @@ else {
 	    'amount'   => $amount,
 	    'currency' => 'cad',
 	    'description' => $description,
+	    'receipt_email' => $email,
 	));
 
 	echo json_encode([
