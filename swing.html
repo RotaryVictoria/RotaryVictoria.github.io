@@ -437,24 +437,21 @@ USA</textarea>
             <h4 class="modal-title">Choose Your Ticket</h4>
           </div>
           <div class="modal-body">
-            <!-- $20 per ticket
-            $35 for 2 tickets
-            $15 for Red Hot Swing Members
-            $15 for Students -->
+             <p>Red Hot Swing member? <a href="#" class='js-rhs-enter-code'>Enter your coupon code here for $5 off!</a></p>
+
+             <input type='hidden' id='buy-rhs-tickets' />
+
             <div class="row">
                 <div class="col-sm-4">
-                    <button class="btn btn-warning" id='buy-swing-tickets'>Single Ticket</button>
+                    <button class="btn btn-warning" id='buy-single-ticket'>Single Ticket</button>
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn btn-warning">Couples Ticket</button>
+                    <button class="btn btn-warning" id='buy-couple-tickets'>Couple's Ticket</button>
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn btn-warning" data-toggle="popover" data-placement="left" data-content="Make sure to bring your student card!">Student Ticket</button>
+                    <button class="btn btn-warning" id='buy-student-ticket'>Student Ticket</button>
                 </div>
-                
-                <p>Red Hot Swing member? <a href="#">Enter your coupon code here for $5 off!</a></p>
             </div>
-            <!-- <p>We've sent a receipt to <span id='js-user-email'></span></p> -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss='modal'>Okay</button>
@@ -498,42 +495,96 @@ USA</textarea>
 
         $('.js-open-payment-modal').click(function(){$('#ticket-choice-modal').modal('show')})
 
+        $('.js-rhs-enter-code').click(function(){
+            //lol, this is exactly $5 worth of security through security
+            var code = prompt("Enter the discount code.");
+            if (code.toUpperCase() === 'RHS'){
+                $('#buy-rhs-tickets').click();
+            }
+            else {
+                alert("Sorry, try again.")
+            }
+        })
+
         function createStripeCheckoutOnClick(config, element){
             var stripeSwing = StripeCheckout.configure(config);
             element.on('click', function(){stripeSwing.open()});
         }
 
+        function uploadSimpleToken(description, identifier, token){
+            $.post('/events/swingforliteracy/buyTicket.php', {
+                    stripeToken: token.id, 
+                    email: token.email
+                    'identifier': identifier,
+            })
+            .then(console.log.bind(console));
+        }
 
-        var swingStripeConfig = {
-            key: 'pk_test_4tURHGoBPy9cryJxpXql7zX0',
-            // key: 'pk_live_kbw7MfDr5mZmhc7XQPfqYstI',
-            panelLabel: "LET'S GO",
-            name: "Single Ticket",
-            description: "Admits one!",
-            amount: 2000,
-            image: "https://victoriarotary.com/assets/img/RotaryMoE_Black.png",
-            allowRememberMe: false,
-            // token: uploadSimpleToken,
-            token: function(token){
-                $.post('/events/swingforliteracy/buyTicket.php', 
-                    {
-                        stripeToken: token.id, 
-                        email: token.email,
-                        description: "Swing for Literacy Single Ticket Purchase"
 
-                })
-                .then(console.log.bind(console));
-            },
+        function init(){
 
-        };
+            var masterStripeConfig = {
+                key: 'pk_test_4tURHGoBPy9cryJxpXql7zX0',
+                // key: 'pk_live_kbw7MfDr5mZmhc7XQPfqYstI',
+                panelLabel: "LET'S GO",
+                image: "https://victoriarotary.com/assets/img/RotaryMoE_Black.png",
+                allowRememberMe: false,
 
-// $.post('/events/swingforliteracy/buyTicket.php', {stripeToken: 123, email: 456}).then(console.log.bind(console));
+            }
 
-        createStripeCheckoutOnClick(swingStripeConfig, $('#buy-swing-tickets'))
+            var singleStripeConfig = {
+                name: "Single Ticket",
+                description: "Admits one!",
+                amount: 2000,
+                //Definitely making this more complicated than I need to, 
+                //but that's what learning projects are for.
+                token: uploadSimpleToken.bind(null, "Swing for Literacy Single Ticket Purchase", 'swing_for_literacy_single'),
+            };
 
-        
-        
+            var coupleStripeConfig = {
+                name: "Couple's Ticket",
+                description: "Admits two! Save $5",
+                amount: 3500,
+                //Definitely making this more complicated than I need to, 
+                //but that's what learning projects are for.
+                token: uploadSimpleToken.bind(null, "Swing for Literacy Couple's Ticket Purchase", 'swing_for_literacy_couple'),
+            };
 
+            var studentStripeConfig = {
+                name: "Student Ticket",
+                description: "Admits one! Save $5. Bring your student card.",
+                amount: 1500,
+                //Definitely making this more complicated than I need to, 
+                //but that's what learning projects are for.
+                token: uploadSimpleToken.bind(null, "Swing for Literacy Student Ticket Purchase", 'swing_for_literacy_student'),
+            };
+
+
+            var rhsStripeConfig = {
+                name: "Red Hot Swing Member Ticket",
+                description: "Admits one! Red Hot Swing members only.  Our way of saying thank you.",
+                amount: 1500,
+                //Definitely making this more complicated than I need to, 
+                //but that's what learning projects are for.
+                token: uploadSimpleToken.bind(null, "Swing for Literacy RHS Ticket Purchase", 'swing_for_literacy_rhs'),
+            };
+
+            $.extend(singleStripeConfig, masterStripeConfig);
+            $.extend(coupleStripeConfig, masterStripeConfig);
+            $.extend(studentStripeConfig, masterStripeConfig);
+            $.extend(rhsStripeConfig, masterStripeConfig);
+
+            createStripeCheckoutOnClick(singleStripeConfig, $('#buy-single-ticket'));
+            createStripeCheckoutOnClick(coupleStripeConfig, $('#buy-couple-tickets'));
+            createStripeCheckoutOnClick(studentStripeConfig, $('#buy-student-ticket'));
+
+
+
+            createStripeCheckoutOnClick(rhsStripeConfig, $('#buy-rhs-tickets'));
+
+        }
+
+        init();
     </script>
     
 
