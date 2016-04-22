@@ -514,7 +514,7 @@ USA</textarea>
         function uploadSimpleToken(description, identifier, token){
             $.post('/events/swingforliteracy/buyTicket.php', {
                     stripeToken: token.id, 
-                    email: token.email
+                    email: token.email,
                     'identifier': identifier,
             })
             .then(console.log.bind(console));
