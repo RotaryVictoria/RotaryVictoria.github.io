@@ -432,7 +432,7 @@ USA</textarea>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss='modal'>Okay</button>
+            <button type="button" class="btn btn-default" data-dismiss='modal'>Close</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -474,14 +474,16 @@ USA</textarea>
         $('.js-open-payment-modal').click(function(){$('#ticket-choice-modal').modal('show')})
 
         $('.js-rhs-enter-code').click(function(){
+
             //lol, this is exactly $5 worth of security through security
             var code = prompt("Enter the discount code.");
             if (code.toUpperCase() === 'RHS' || code.toUpperCase() === 'SDAV'){
-                $('#buy-rhs-tickets').click();
+                $('.buy-rhs-tickets').click();
             }
             else {
                 alert("Sorry, try again.")
             }
+            return false;
         })
 
         function createStripeCheckoutOnClick(config, element){
